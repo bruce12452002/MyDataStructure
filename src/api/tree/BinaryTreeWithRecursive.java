@@ -1,6 +1,7 @@
 package api.tree;
 
 import api.linear.QueueWithLinkedList;
+import api.linear.ArrayList2;
 
 public class BinaryTreeWithRecursive {
     private Node root;
@@ -53,14 +54,6 @@ public class BinaryTreeWithRecursive {
         return null;
     }
 
-    private Node getMinNodeWithRightTree(Node node) {
-        return null;
-    }
-
-    private Node getMaxNodeWithLeftTree(Node node) {
-        return null;
-    }
-
     public Node getMinKey() {
         return null;
     }
@@ -74,6 +67,10 @@ public class BinaryTreeWithRecursive {
     }
 
     private Node getMaxKey(Node node) {
+        return null;
+    }
+
+    public QueueWithLinkedList<Integer> preOrder() {
         return null;
     }
 
@@ -106,7 +103,7 @@ public class BinaryTreeWithRecursive {
     /**
      * 層級遍歷：由上而下，由左至右，也就是中左右
      */
-    public QueueWithLinkedList<Integer> levelOrder() {
+    public ArrayList2 levelOrder() {
         return null;
     }
 

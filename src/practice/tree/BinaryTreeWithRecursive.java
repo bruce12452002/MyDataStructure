@@ -66,10 +66,10 @@ public class BinaryTreeWithRecursive {
             return null;
         }
 
-        if (key > node.key) {
-            return get(node.right, key);
-        } else if (key < node.key) {
+        if (key < node.key) {
             return get(node.left, key);
+        } else if (key > node.key) {
+            return get(node.right, key);
         } else {
             return node.value;
         }
@@ -84,10 +84,10 @@ public class BinaryTreeWithRecursive {
             return null;
         }
 
-        if (key > node.key) {
-            node.right = remove(node.right, key);
-        } else if (key < node.key) {
+        if (key < node.key) {
             node.left = remove(node.left, key);
+        } else if (key > node.key) {
+            node.right = remove(node.right, key);
         } else {
             // 左右子樹都沒有時，直接刪除
             // 此 if 可省略，因為用下面兩個 if 時，回傳的不管是 node.left 還是 node.right 都是 null
@@ -112,37 +112,31 @@ public class BinaryTreeWithRecursive {
 
 
             // =========================================== 右子樹中最小的節點 ===========================================
-            Node minNode = getMinNodeWithRightTree(node.right); // 找右子樹最小節點
+            // 找右子樹最小節點
+            Node minNode = node.right;
+            while (minNode.left != null) {
+                minNode = minNode.left;
+            }
 
             // 增加新節點的左右子樹
-            minNode.right = remove(node.right, minNode.key); // 將 node.right 子樹裡，指定 key 的節點刪除，並回傳 node.right
             minNode.left = node.left; // 要刪除的左節點為新節點的左節點
+            minNode.right = remove(node.right, minNode.key); // 將 node.right 子樹裡，指定 key 的節點刪除，並回傳 node.right
 
             return minNode; // 回傳新節點
 
 
             // ============================================= 左子樹中最大的節點 ===========================================
-//            Node maxNode = getMaxNodeWithLeftTree(node.left); // 找左子樹最大節點
+            // 找左子樹最大節點
+//            Node maxNode = node.left;
+//            while (maxNode.right != null) {
+//                maxNode = minNode.right;
+//            }
 //
 //            // 增加新節點的左右子樹
 //            maxNode.left = remove(node.left, maxNode.key); // 將 node.left 子樹裡，指定 key 的節點刪除，並回傳 node.left
 //            maxNode.right = node.right; // 要刪除的右節點為新節點的商節點
 //
 //            return maxNode; // 回傳新節點
-        }
-        return node;
-    }
-
-    private Node getMinNodeWithRightTree(Node node) {
-        while (node.left != null) {
-            node = node.left;
-        }
-        return node;
-    }
-
-    private Node getMaxNodeWithLeftTree(Node node) {
-        while (node.right != null) {
-            node = node.right;
         }
         return node;
     }
