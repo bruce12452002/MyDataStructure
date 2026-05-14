@@ -1,6 +1,11 @@
 package practice.tree;
 
-public class BinaryTreeWithLoop {
+/**
+ * 二元搜尋樹
+ * 對於根節點，左子樹中所有節點的值 < 根節點的值 < 右子樹中所有節點的值 (PS 全部都 > 也可以)
+ * 任意節點的左、右子樹也是二元搜尋樹，也就是同樣滿足上一行的條件
+ */
+public class BinarySearchTreeWithLoop {
     private Node root;
     private int size;
 
@@ -161,7 +166,7 @@ public class BinaryTreeWithLoop {
      *            1  4          17  23  32
      */
     public static void main(String[] args) {
-        BinaryTreeWithLoop tree = new BinaryTreeWithLoop();
+        BinarySearchTreeWithLoop tree = new BinarySearchTreeWithLoop();
         tree.add(10, "xxx");
         tree.add(21, "b");
         tree.add(5, "c");

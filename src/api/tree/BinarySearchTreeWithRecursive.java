@@ -3,7 +3,12 @@ package api.tree;
 import api.linear.QueueWithLinkedList;
 import api.linear.ArrayList2;
 
-public class BinaryTreeWithRecursive {
+/**
+ * 二元搜尋樹
+ * 對於根節點，左子樹中所有節點的值 < 根節點的值 < 右子樹中所有節點的值 (PS 全部都 > 也可以)
+ * 任意節點的左、右子樹也是二元搜尋樹，也就是同樣滿足上一行的條件
+ */
+public class BinarySearchTreeWithRecursive {
     private Node root;
     private int size;
 
@@ -130,7 +135,7 @@ public class BinaryTreeWithRecursive {
      *            層級： 10,5,21,3,9,13,28,1,4,17,23,32
      */
     public static void main(String[] args) {
-        BinaryTreeWithRecursive tree = new BinaryTreeWithRecursive();
+        BinarySearchTreeWithRecursive tree = new BinarySearchTreeWithRecursive();
         tree.add(10, "xxx");
         tree.add(21, "b");
         tree.add(5, "c");

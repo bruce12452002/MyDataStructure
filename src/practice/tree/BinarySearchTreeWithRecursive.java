@@ -3,7 +3,12 @@ package practice.tree;
 import practice.linear.ArrayList2;
 import practice.linear.QueueWithLinkedList;
 
-public class BinaryTreeWithRecursive {
+/**
+ * 二元搜尋樹
+ * 對於根節點，左子樹中所有節點的值 < 根節點的值 < 右子樹中所有節點的值 (PS 全部都 > 也可以)
+ * 任意節點的左、右子樹也是二元搜尋樹，也就是同樣滿足上一行的條件
+ */
+public class BinarySearchTreeWithRecursive {
     private Node root;
     private int size;
 
@@ -96,16 +101,16 @@ public class BinaryTreeWithRecursive {
 //                return null;
 //            }
 
-            // 只有右子樹沒有時
-            if (node.right == null) {
-                size--;
-                return node.left;
-            }
-
             // 只有左子樹沒有時
             if (node.left == null) {
                 size--;
                 return node.right;
+            }
+
+            // 只有右子樹沒有時
+            if (node.right == null) {
+                size--;
+                return node.left;
             }
 
             // 左右子樹都有時，找到「右子樹中最小的節點」或者找到「左子樹中最大的節點」，使用其中一個就行
@@ -295,7 +300,7 @@ public class BinaryTreeWithRecursive {
      *            層級： 10,5,21,3,9,13,28,1,4,17,23,32
      */
     public static void main(String[] args) {
-        BinaryTreeWithRecursive tree = new BinaryTreeWithRecursive();
+        BinarySearchTreeWithRecursive tree = new BinarySearchTreeWithRecursive();
         tree.add(10, "xxx");
         tree.add(21, "b");
         tree.add(5, "c");
