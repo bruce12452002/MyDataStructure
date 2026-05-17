@@ -7,6 +7,8 @@ import practice.linear.QueueWithLinkedList;
  * 二元搜尋樹
  * 對於根節點，左子樹中所有節點的值 < 根節點的值 < 右子樹中所有節點的值 (PS 全部都 > 也可以)
  * 任意節點的左、右子樹也是二元搜尋樹，也就是同樣滿足上一行的條件
+ *
+ * 使用串列來實作，因為使用陣列實作時，二元搜尋樹並不是 Complete Binary Tree，所以有些值會存 null，造成空間浪費
  */
 public class BinarySearchTreeWithRecursive {
     private Node root;
@@ -139,7 +141,7 @@ public class BinarySearchTreeWithRecursive {
 //
 //            // 增加新節點的左右子樹
 //            maxNode.left = remove(node.left, maxNode.key); // 將 node.left 子樹裡，指定 key 的節點刪除，並回傳 node.left
-//            maxNode.right = node.right; // 要刪除的右節點為新節點的商節點
+//            maxNode.right = node.right; // 要刪除的右節點為新節點的右節點
 //
 //            return maxNode; // 回傳新節點
         }
@@ -315,11 +317,11 @@ public class BinarySearchTreeWithRecursive {
         tree.add(23, "l");
 
 //        tree.add(10, "a");
-//        tree.remove(21);
+        tree.remove(21);
 //        System.out.println(tree.getMaxKey().key);
 
-        QueueWithLinkedList<Integer> queue = tree.inOrder();
-        queue.forEach(c -> System.out.print(c + ","));
+//        QueueWithLinkedList<Integer> queue = tree.inOrder();
+//        queue.forEach(c -> System.out.print(c + ","));
 //        ArrayList2 list = tree.levelOrder();
 //        list.forEach(c -> System.out.print(c + ","));
 

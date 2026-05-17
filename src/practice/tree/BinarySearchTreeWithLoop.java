@@ -4,6 +4,8 @@ package practice.tree;
  * 二元搜尋樹
  * 對於根節點，左子樹中所有節點的值 < 根節點的值 < 右子樹中所有節點的值 (PS 全部都 > 也可以)
  * 任意節點的左、右子樹也是二元搜尋樹，也就是同樣滿足上一行的條件
+ *
+ * 使用串列來實作，因為使用陣列實作時，二元搜尋樹並不是 Complete Binary Tree，所以有些值會存 null，造成空間浪費
  */
 public class BinarySearchTreeWithLoop {
     private Node root;
