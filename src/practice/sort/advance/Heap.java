@@ -1,9 +1,9 @@
 package practice.sort.advance;
 
-import practice.tree.HeapTree;
+import practice.tree.BinaryHeapTree;
 
 
-public class Heap extends HeapTree {
+public class Heap extends BinaryHeapTree {
     public void sort() {
         int originalSize = size; // 暫存 size
         while (size > 1) {
@@ -34,6 +34,8 @@ public class Heap extends HeapTree {
         for (var i = 0; i < heap.size; i++) {
             System.out.print(heap.elements[i] + " ");
         }
+
+        heap.heapify();
     }
 
 }

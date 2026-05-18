@@ -25,12 +25,12 @@ package practice.tree;
  *   父節點： (i-1) / 2
  *   子節點： 2i+1  2i+2
  */
-public class HeapTree {
+public class BinaryHeapTree {
     protected String[] elements; // 使用 a-z 來比較大小，用數字怕和索引搞混，增加學習的困難
 
     protected int size;
 
-    public HeapTree() {
+    public BinaryHeapTree() {
         elements = new String[20];
     }
 
@@ -167,8 +167,18 @@ public class HeapTree {
         return true;
     }
 
+    /**
+     * 樹化成堆積樹，陣列是亂的也沒關係
+     */
+    public void heapify() {
+        // 從最後一個非葉節點開始，所以是 size / 2 - 1
+        for (int i = size / 2 - 1; i >= 0; i--) {
+            siftDown(i);
+        }
+    }
+
     public static void main(String[] args) {
-        HeapTree tree = new HeapTree();
+        BinaryHeapTree tree = new BinaryHeapTree();
         tree.add("c");
         tree.add("d");
         tree.add("a");
