@@ -1,9 +1,9 @@
 package api.sort.advance;
 
-import api.tree.HeapTree;
+import api.tree.BinaryHeapTree;
 
 
-public class Heap extends HeapTree {
+public class Heap extends BinaryHeapTree {
     public void sort() {
     }
 
