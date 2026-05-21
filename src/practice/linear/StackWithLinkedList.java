@@ -79,12 +79,12 @@ public class StackWithLinkedList implements Iterable<String> {
 
         @Override
         public boolean hasNext() {
-            return head != null;
+            return node != null;
         }
 
         @Override
         public String next() {
-            String result = head.item;
+            String result = node.item;
             node = node.next;
             return result;
         }

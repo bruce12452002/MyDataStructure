@@ -107,7 +107,7 @@ public class ArrayList2 implements Iterable<String> {
         return -1;
     }
 
-    private int length() {
+    public int length() {
         return size;
     }
 

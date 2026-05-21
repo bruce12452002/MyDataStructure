@@ -37,7 +37,7 @@ public class ArrayList2 {
         return -1;
     }
 
-    private int length() {
+    public int length() {
         return -1;
     }
 
